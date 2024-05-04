@@ -20,7 +20,7 @@ export class ArticlesService {
   newsLimit = 10; //limit for each post
   key1 = environment.apiKey; //apiKey
   newsPage = 1; //page for the api
-  // newsUrl:string = `https://newsapi.org/v2/top-headlines?language=en&pageSize=${this.newsLimit}&page=${this.newsPage}&apiKey=1063c1d230014a12a5f0689bcde97b65`;
+  
   constructor(private http:HttpClient) { }
 
   //Get articles

@@ -29,7 +29,7 @@ export class ArticlesComponent {
     this.articlesService.getArticles(this.page,this.articleType,this.searchQuery).subscribe({
       next:response => this.articles =[...this.articles,...response.articles] ,
       error: err => {
-        if(err.status == 426)  { //prevents making more request after the maximum request
+        if(err.status == 426 && !err.message.includes('localhost'))  { //prevents making more request after the maximum request
           this.isInfiniteScrollDisabled = true
           this.toggleIsLoading();
           return

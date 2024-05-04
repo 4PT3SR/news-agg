@@ -32,7 +32,8 @@ export class ArticlesComponent {
         if(err.status == 426)  { //prevents making more request after the maximum request
           this.isInfiniteScrollDisabled = true
           this.toggleIsLoading();
-          return
+          this.errMessage=err.error.message;
+          return 
         }
         this.errMessage=err.error.message;
         this.toggleIsLoading();
@@ -61,6 +62,7 @@ export class ArticlesComponent {
       }
 
     onScroll() {
+      console.log('scrolled')
       this.loadArticles()
     }
 

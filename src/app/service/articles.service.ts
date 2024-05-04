@@ -34,6 +34,7 @@ export class ArticlesService {
   
   getArticles(page:number,articleType:'everything'|'top-headlines'='top-headlines',searchQuery=''):Observable<response> {
     return this.http.get<response>(`https://newsapi.org/v2/${articleType}?language=en&q=${searchQuery}&pageSize=${this.newsLimit}&page=${page}&apiKey=${this.key1}`)
+    
 
 
   }
